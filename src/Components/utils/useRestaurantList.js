@@ -8,14 +8,7 @@ const useRestaurantList = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(RES_API, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: { key: "some text" },
-    });
+    const data = await fetch(RES_API);
     const json = await data.json();
     setResList(
       json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
